@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ASCII-ART-WEB</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>ASCII-ART-WEB</h1>
+
+    <form action="/ascii-art" method="POST">
+        <label for="text">Input text</label>
+        <textarea id="text" name="text" placeholder="Enter text...">{{.Text}}</textarea>
+
+        <div class="radio-group">
+            <label class="radio-option">
+                <input type="radio" name="banner" value="standard"
+                    {{if eq .Banner "standard"}}checked{{end}}>
+                Standard
+            </label>
+
+            <label class="radio-option">
+                <input type="radio" name="banner" value="shadow"
+                    {{if eq .Banner "shadow"}}checked{{end}}>
+                Shadow
+            </label>
+
+            <label class="radio-option">
+                <input type="radio" name="banner" value="thinkertoy"
+                    {{if eq .Banner "thinkertoy"}}checked{{end}}>
+                Thinkertoy
+            </label>
+        </div>
+
+        <button type="submit">Create ASCII</button>
+    </form>
+
+    {{if .Result}}
+    <div class="result-section">
+        <div class="current-input">
+            <p><strong>Text:</strong></p>
+            <pre>{{.Text}}</pre>
+            <p><strong>Banner:</strong> {{.Banner}}</p>
+        </div>
+
+        <pre class="result">{{.Result}}</pre>
+    </div>
+    {{end}}
+</div>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+:root {
+  --bg-dark: #0a0a10;
+  --yellow: #ffd54a;
+  --red: #ff4040;
+  --text: #f2f2f2;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-dark);
+  color: var(--text);
+  font-family: "Share Tech Mono", monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 40px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 213, 74, 0.3);
+  text-align: center;
+  width: 90%;
+  max-width: 360px;
+  box-shadow: 0 0 20px rgba(255, 64, 64, 0.35);
+}
+
+h1 {
+  margin-top: 0;
+  color: var(--yellow);
+}
+
+p {
+  margin: 15px 0 25px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(90deg, var(--yellow), var(--red));
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+}
